@@ -1,0 +1,46 @@
+.landing-page {
+  background-color: #F7F7F7;
+  height: 100vh;
+}
+
+.main {
+
+}
+
+.center {
+  text-align: center;
+  margin-top: 175px;
+}
+
+.center h1 {
+  font-size: 6rem;
+  font-family: 'Audiowide', cursive;
+}
+
+.center p {
+  font-size: 2rem;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.landing-text {
+  padding: 10px;
+  color: #032D56;
+}
+
+.landing-button-row {
+  padding-bottom: 10px;
+}
+
+.landing-button {
+  margin-bottom: 10px;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 600;
+}
+
+.btn-default {
+  background-color: #A0E8E8;
+}
+
+.btn-default:hover {
+  background-color: #F2CEE6;
+}
