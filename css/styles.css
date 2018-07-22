@@ -7,6 +7,7 @@
 
 }
 
+/* index css */
 .center {
   text-align: center;
   margin-top: 175px;
@@ -43,4 +44,65 @@
 
 .btn-default:hover {
   background-color: #F2CEE6;
+}
+
+/* section css */
+.nav-container h1 {
+  font-family: 'Audiowide', cursive;
+}
+
+.nav-content {
+  margin-top: 20px;
+  color: #032D56;
+}
+
+.logo-col {
+  padding-left: 0;
+}
+
+.nav-bar-search {
+  float: right;
+}
+
+.title {
+  font-family: 'Merriweather Sans', sans-serif;
+  margin-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+.article {
+  padding-bottom: 20px;
+}
+
+.coin-holder {
+  float: left;
+}
+
+.coin-img {
+  height: 75px;
+  margin: -50px 10px 10px 20px;
+  position: absolute;
+  z-index: 999;
+}
+
+.article-img {
+  z-index: -999;
+}
+
+.article-info {
+  margin: 10px 0 10px 100px;
+}
+
+.article-info time{
+  float: right;
+}
+
+@media screen and (min-width:768px) {
+
+}
+
+@media screen and (max-width: 767px) {
+  .nav-content {
+    float: none;
+  }
 }
