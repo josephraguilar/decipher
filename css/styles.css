@@ -1,3 +1,7 @@
+.float-left {
+  float: left;
+}
+
 .landing-page {
   background-color: #F7F7F7;
   height: 100vh;
@@ -47,6 +51,37 @@
 }
 
 /* section css */
+.form-container {
+  overflow: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(0,0,0,.7);
+  border: 1px solid black;
+  height: 0;
+  width: 100%;
+}
+
+.blog-form {
+  background-color: white;
+  max-width: 600px;
+  min-width: 200px;
+  margin: 0 auto;
+  margin-top: 75px;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.blog-form label, input, select {
+  margin-bottom: 10px;
+  display: block;
+}
+
+#descInput {
+  width: 100%;
+  height: 100px;
+}
+
 .nav-container h1 {
   font-family: 'Audiowide', cursive;
 }
@@ -70,6 +105,22 @@
   border-bottom: 2px solid black;
 }
 
+.title h2 {
+  font-weight: 600;
+}
+
+.add-icon {
+  float: right;
+}
+
+.add-icon:hover {
+  cursor: pointer;
+}
+
+.add-icon i {
+  margin-top: 75px;
+}
+
 .article {
   padding-bottom: 20px;
 }
@@ -82,7 +133,7 @@
   height: 75px;
   margin: -50px 10px 10px 20px;
   position: absolute;
-  z-index: 999;
+  z-index: 1;
 }
 
 .article-img {
@@ -104,5 +155,8 @@
 @media screen and (max-width: 767px) {
   .nav-content {
     float: none;
+  }
+  .add-icon i {
+    margin-top: 0px;
   }
 }
