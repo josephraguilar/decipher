@@ -12,6 +12,10 @@
 }
 
 /* index css */
+.articleBody {
+  background-color: rgba(247,247,247,1)
+}
+
 .center {
   text-align: center;
   margin-top: 175px;
@@ -121,8 +125,12 @@
   margin-top: 75px;
 }
 
+.article-col {
+  height: 420px;
+}
+
 .article {
-  padding-bottom: 20px;
+
 }
 
 .coin-holder {
@@ -134,6 +142,8 @@
   margin: -50px 10px 10px 20px;
   position: absolute;
   z-index: 1;
+  border-radius: 45px;
+  background-color: rgba(247,247,247,1);
 }
 
 .article-img {
@@ -158,5 +168,9 @@
   }
   .add-icon i {
     margin-top: 0px;
+  }
+  .article-col {
+    max-height: 420px;
+    height: auto;
   }
 }

@@ -1,8 +1,16 @@
-let blogs = [];
+let articles = [];
 
 let addArticleBtn = document.getElementById('addArticleBtn');
 let blogCancel = document.getElementById('blogCancel');
 let blogSubmit = document.getElementById('blogSubmit');
+
+function Article(img, coinType, author, title, desc) {
+    this.img = img;
+    this.coinType = coinType;
+    this.author = author;
+    this.title = title;
+    this.desc = desc;
+}
 
 addArticleBtn.addEventListener('click', e => {
   e.preventDefault();
@@ -29,18 +37,18 @@ blogSubmit.addEventListener('click', e => {
   let titleInput = document.getElementById('titleInput').value;
   let descInput = document.getElementById('descInput').value;
   let articleSection = document.getElementById('articleSection');
-
-  console.log(imgInput, coinType, authorInput, titleInput, descInput);
+  let imageHolder = document.getElementById("digital");
 
   let column = document.createElement('div');
   column.classList.add('col-md-6','col-sm-6','col-xs-12', 'article-col');
 
   let article = document.createElement('div');
   article.classList.add('article');
-  article.innerHTML = '<a href="#"><img src="' + imgInput + '" alt="" class="img-responsive article-img"></a>' +
+  // need to change image holder to uploaded image
+  article.innerHTML = '<a href="#"><img src="img/digital.jpg" alt="" class="img-responsive article-img"></a>' +
                       '<div class="info-buffer clearfix">' +
                       '<div class="coin-holder">' +
-                      '<img src="' + coinType + '" alt="" class="coin-img>"' +
+                      '<img src="' + coinType + '" alt="" class="coin-img">' +
                       '</div>' +
                       '<div class="article-info">' +
                       'By: <a href="#">' + authorInput + '</a> <time datetime="2018-7-22 00:09:00"> July 22, 2018</time>' +
@@ -50,6 +58,29 @@ blogSubmit.addEventListener('click', e => {
                       '<p>' + descInput + '</p>' +
                       '</div>'
 
+   column.appendChild(article);
+   articleSection.appendChild(column);
 
+   let formContainer = document.getElementById('formContainer');
+     formContainer.style.opacity = "0";
+     formContainer.style.height = "0%";
+     formContainer.style.transition = "height 0s 400ms, opacity 400ms 0ms"
 
+  let newArticle = new Article(imgInput, coinType, authorInput, titleInput, descInput);
+  articles.create(newArticle)
 })
+
+Array.prototype.create = function(newArticle) {
+  this.push(newArticle);
+  console.log(articles);
+}
+
+Array.prototype.read = function() {
+  this.forEach(function(article, index) {
+    console.log(article, index);
+  })
+}
+
+// Array.prototype.update = function(article, newArticle) {
+//   if (newArticle.)
+// }
