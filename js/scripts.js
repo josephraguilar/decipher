@@ -61,6 +61,7 @@ blogSubmit.addEventListener('click', e => {
                       '</div>' +
                       '<a href="#"><h3>' + titleInput + '</h3></a>' +
                       '<p>' + descInput + '</p>' +
+                      '</div>' +
                       '</div>'
 
    column.appendChild(articleDiv);
