@@ -1,9 +1,11 @@
-let articles = [];
 
+let articles = [];
 let addArticleBtn = document.getElementById('addArticleBtn');
 let blogCancel = document.getElementById('blogCancel');
 let blogSubmit = document.getElementById('blogSubmit');
+let form = document.getElementById('articleForm');
 
+// article constructor function
 function Article(img, coinType, author, title, desc) {
     this.img = img;
     this.coinType = coinType;
@@ -12,6 +14,7 @@ function Article(img, coinType, author, title, desc) {
     this.desc = desc;
 }
 
+// blog form add display function
 addArticleBtn.addEventListener('click', e => {
   e.preventDefault();
   let formContainer = document.getElementById('formContainer');
@@ -28,6 +31,7 @@ blogCancel.addEventListener('click', e => {
     formContainer.style.transition = "height 0s 400ms, opacity 400ms 0ms"
 })
 
+// article creation function
 blogSubmit.addEventListener('click', e => {
   e.preventDefault();
 
@@ -42,10 +46,11 @@ blogSubmit.addEventListener('click', e => {
   let column = document.createElement('div');
   column.classList.add('col-md-6','col-sm-6','col-xs-12', 'article-col');
 
-  let article = document.createElement('div');
-  article.classList.add('article');
+  let articleDiv = document.createElement('div');
+  articleDiv.classList.add('article');
+
   // need to change image holder to uploaded image
-  article.innerHTML = '<a href="#"><img src="img/digital.jpg" alt="" class="img-responsive article-img"></a>' +
+  articleDiv.innerHTML = '<a href="#"><img src="' + imgInput + ' " alt="" class="img-responsive article-img"></a>' +
                       '<div class="info-buffer clearfix">' +
                       '<div class="coin-holder">' +
                       '<img src="' + coinType + '" alt="" class="coin-img">' +
@@ -58,7 +63,7 @@ blogSubmit.addEventListener('click', e => {
                       '<p>' + descInput + '</p>' +
                       '</div>'
 
-   column.appendChild(article);
+   column.appendChild(articleDiv);
    articleSection.appendChild(column);
 
    let formContainer = document.getElementById('formContainer');
@@ -67,20 +72,46 @@ blogSubmit.addEventListener('click', e => {
      formContainer.style.transition = "height 0s 400ms, opacity 400ms 0ms"
 
   let newArticle = new Article(imgInput, coinType, authorInput, titleInput, descInput);
-  articles.create(newArticle)
+  articles.create(newArticle);
+  form.reset();
 })
 
-Array.prototype.create = function(newArticle) {
-  this.push(newArticle);
+// crud functions
+Array.prototype.create = function(Article) {
+  this.push(Article);
   console.log(articles);
 }
 
 Array.prototype.read = function() {
-  this.forEach(function(article, index) {
-    console.log(article, index);
+  this.forEach(function(Article, index) {
+    console.log(Article, index);
   })
 }
 
-// Array.prototype.update = function(article, newArticle) {
-//   if (newArticle.)
-// }
+Array.prototype.update = function(Article, newArticle) {
+  if (newArticle.img === null || newArticle.img === '' || newArticle.coinType === null || newArticle.coinType === '' || newArticle.author === null || newArticle.author === '' || newArticle.title === null || newArticle.title === '' || newArticle.desc === null ||
+  newArticle.desc === '') {
+    return;
+  } else {
+    let updatedArticles = [];
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === Article) {
+        updatedArticles[i] = newArticle;
+      } else updatedArticles.push(this[i]);
+    }
+  }
+  return updatedArticles;
+}
+
+Array.prototype.remove = function(Article) {
+  let updatedArticles = [];
+  for (let i = 0; i < this.length; i++) {
+    if(this[i] === Article){
+    continue;
+  }
+  else {
+    updatedArticles.push(this[i]);
+  }
+  }
+  return updatedArticles;
+}

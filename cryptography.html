@@ -14,9 +14,14 @@
 
   <!-- blog add popup -->
   <div class="form-container" id="formContainer">
-    <form action="" class="blog-form">
+    <form action="" class="blog-form" id="articleForm">
       <label for="imgInput">Image</label>
-      <input type="file" accept="image/*" id="imgInput">
+      <select name="image" id="imgInput">
+        <option value="img/digital.jpg">Digital</option>
+        <option value="img/goldcoins.jpg">Gold Coins</option>
+        <option value="img/puzzlesplash.jpg">Puzzle</option>
+        <option value="img/security.jpg">Security</option>
+      </select>
       <label for="coinType">Coin Type</label>
       <select name="coinType" id="coinType">
         <option value="img/btc_logo.png">Bitcoin</option>
